@@ -44,7 +44,11 @@ function divide(num1,num2){
 		firstNum = parseInt(display.textContent);
 		fxn = "/";
 		clearDisplay();
-	}else if (firstNum && secondNum && fxn =="/") {
+	}else if (secondNum =="0") {
+		display.textContent = "no";
+		clearCalc();
+	}
+	else if (firstNum && secondNum && fxn =="/") {
 		display.textContent = num1/num2;
 		clearCalc();
 	}
@@ -59,6 +63,9 @@ function operator(){
 }
 
 function setDisplay(displayVal){
+	if(display.textContent =="no"){
+		clearDisplay();
+	}
   display.textContent += displayVal;
 }
 
