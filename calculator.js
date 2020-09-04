@@ -17,16 +17,37 @@ function add (num1, num2) {
 }
 
 function subtract (num1,num2) {
-	return num1-num2;
+	if(!firstNum){
+		firstNum = parseInt(display.textContent);
+		fxn = "-";
+		clearDisplay();
+	}else if (firstNum && secondNum && fxn =="-") {
+		display.textContent = num1-num2;
+		clearCalc();
+	}
 }
 
 
 function multiply (num1, num2) {
-	return num1*num2;
+	if(!firstNum){
+		firstNum = parseInt(display.textContent);
+		fxn = "x";
+		clearDisplay();
+	}else if (firstNum && secondNum && fxn =="x") {
+		display.textContent = num1*num2;
+		clearCalc();
+	}
 }
 
 function divide(num1,num2){
-  return num1/num2;
+	if(!firstNum){
+		firstNum = parseInt(display.textContent);
+		fxn = "/";
+		clearDisplay();
+	}else if (firstNum && secondNum && fxn =="/") {
+		display.textContent = num1/num2;
+		clearCalc();
+	}
 }
 
 function operator(){
@@ -46,13 +67,13 @@ function callFunction(fxn){
 		clearCalc();
 		clearDisplay();
 	}else if(fxn == "x"){
-		console.log(fxn);
+		multiply(firstNum,secondNum);
 	}else if(fxn == "+"){
 		add(firstNum,secondNum);
 	}else if(fxn == "-"){
-		console.log(fxn);
+		subtract(firstNum,secondNum);
 	}else if(fxn =="/"){
-		console.log(fxn);
+		divide(firstNum,secondNum);
 	}else if(fxn =="="){
 		operator();
 	}
