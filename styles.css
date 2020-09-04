@@ -1,6 +1,6 @@
 .keyboard{
   display: grid;
-  grid-template-columns: repeat(3,auto);
+  grid-template-columns: repeat(4,auto);
 
   height: 500px;
   width: 500px;
@@ -8,4 +8,18 @@
   padding: 2px;
   border-style: solid;
   border-width: thin;
+}
+
+.display{
+  height: 100px;
+  width: 500px;
+
+  text-align: right;
+  font-size: 90px;
+
+  border-style: solid;
+  border-width: thin;
+
+  padding: 2px;
+  margin-bottom: 3px;
 }
